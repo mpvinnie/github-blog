@@ -1,13 +1,12 @@
 import { ThemeProvider } from 'styled-components'
+import { Home } from './pages/home'
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
 
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div>
-        <h1>App</h1>
-      </div>
+      <Home />
       <GlobalStyle />
     </ThemeProvider>
   )
