@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 export const ProfileContainer = styled.div`
   width: 100%;
-  max-width: 56rem;
-  margin: -6rem auto;
   padding: 2rem;
 
   display: flex;
@@ -11,6 +9,7 @@ export const ProfileContainer = styled.div`
 
   background: ${props => props.theme.profile};
   border-radius: 10px;
+  box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
 
   img {
     width: 9.25rem;
