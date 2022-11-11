@@ -1,3 +1,5 @@
+import ReactMoarkdown from 'react-markdown'
+
 import styled from 'styled-components'
 
 export const PostContainer = styled.div`
@@ -56,6 +58,53 @@ export const PostInfo = styled.div`
         width: 1.125rem;
         height: 1.125rem;
         color: ${props => props.theme.label};
+      }
+    }
+  }
+`
+
+export const PostContent = styled(ReactMoarkdown)`
+  padding: 2.5rem 2rem;
+
+  p {
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: underline;
+    color: ${props => props.theme.blue};
+    line-height: 1.6;
+  }
+
+  pre {
+    width: 100%;
+    margin-top: 1.5rem;
+
+    div {
+      background: ${props => props.theme.post} !important;
+      padding: 1rem;
+      border-radius: 2px;
+
+      span {
+        margin: 0;
+        text-shadow: none;
+        background: none !important;
+        color: ${props => props.theme.text};
+
+        &.keyword,
+        &.punctuation {
+          color: ${props => props.theme['code-keyword']} !important;
+        }
+
+        &.number,
+        &.string,
+        &.boolean {
+          color: ${props => props.theme['code-value']} !important;
+        }
+
+        &.comment {
+          color: ${props => props.theme['code-comment']} !important;
+        }
       }
     }
   }
