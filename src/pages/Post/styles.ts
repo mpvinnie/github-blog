@@ -47,7 +47,7 @@ export const PostInfo = styled.div`
     align-items: center;
     gap: 2rem;
 
-    a {
+    span {
       display: flex;
       align-items: center;
       gap: 0.5rem;
@@ -104,6 +104,10 @@ export const PostContent = styled(ReactMoarkdown)`
 
         &.comment {
           color: ${props => props.theme['code-comment']} !important;
+        }
+
+        &.token .tag .class-name {
+          color: ${props => props.theme.blue} !important;
         }
       }
     }

@@ -18,13 +18,10 @@ type User = {
   followers: number
 }
 
-type Post = {
+export type Post = {
   number: number
-  url: string
+  html_url: string
   title: string
-  user: {
-    login: string
-  }
   created_at: string
   comments: number
   body: string
