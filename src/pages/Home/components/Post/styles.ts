@@ -1,10 +1,12 @@
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const PostContainer = styled.article`
+export const PostContainer = styled(NavLink)`
   padding: 2rem;
   border-radius: 10px;
 
   background: ${props => props.theme.post};
+  color: ${props => props.theme.text};
 
   header {
     display: flex;
@@ -20,9 +22,10 @@ export const PostContainer = styled.article`
     }
 
     span {
-      width: 5rem;
+      width: 6rem;
       font-size: 0.875rem;
       color: ${props => props.theme.span};
+      text-align: start;
     }
 
     margin-bottom: 1.25rem;

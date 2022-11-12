@@ -1,18 +1,25 @@
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 import { PostContainer } from './styles'
 
 interface PostProps {
-  id: string
+  number: number
   title: string
   content: string
   createdAt: string
 }
 
-export function Post({ title, content, createdAt }: PostProps) {
+export function Post({ number, title, content, createdAt }: PostProps) {
+  const dateRelativeToNow = formatDistanceToNow(new Date(createdAt), {
+    addSuffix: true,
+    locale: ptBR
+  })
+
   return (
-    <PostContainer>
+    <PostContainer to={`/${number}`}>
       <header>
         <h2>{title}</h2>
-        <span>{createdAt}</span>
+        <span>{dateRelativeToNow}</span>
       </header>
       <p>{content}</p>
     </PostContainer>

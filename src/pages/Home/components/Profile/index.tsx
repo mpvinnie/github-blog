@@ -1,33 +1,38 @@
 import { ArrowSquareOut, Buildings, GithubLogo, Users } from 'phosphor-react'
+import { useContext } from 'react'
+import { BlogContext } from '../../../../contexts/BlogContext'
 import { ProfileContainer, ProfileInfos } from './styles'
 
 export function Profile() {
+  const { user } = useContext(BlogContext)
+
   return (
     <ProfileContainer>
-      <img src='https://github.com/mpvinnie.png' alt='' />
+      <img src={user.avatar_url} alt='' />
       <ProfileInfos>
         <header>
-          <h1>Vinicius Peres</h1>
-          <a href='#'>
+          <h1>{user.name}</h1>
+          <a href={user.html_url} target='_blank' rel='noreferrer'>
             GITHUB
             <ArrowSquareOut weight='bold' />
           </a>
         </header>
         <main>
-          <span>
-            Desenvolvedor Junior Full-Stack. Apaixonado por programação.
-          </span>
+          <span>{user.bio}</span>
         </main>
         <footer>
-          <a href='#'>
-            <GithubLogo size={18} weight='fill' /> mpvinnie
-          </a>
-          <a href='#'>
-            <Buildings size={18} weight='fill' /> Zenvia
-          </a>
-          <a href='#'>
-            <Users size={18} weight='fill' /> 4 seguidores
-          </a>
+          <span>
+            <GithubLogo size={18} weight='fill' />
+            {user.login}
+          </span>
+          <span>
+            <Buildings size={18} weight='fill' />
+            {user.company}
+          </span>
+          <span>
+            <Users size={18} weight='fill' />
+            {user.followers} {user.followers === 1 ? 'seguidor' : 'seguidores'}
+          </span>
         </footer>
       </ProfileInfos>
     </ProfileContainer>

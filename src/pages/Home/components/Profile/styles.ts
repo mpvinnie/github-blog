@@ -63,7 +63,7 @@ export const ProfileInfos = styled.div`
     align-items: center;
     gap: 1.5rem;
 
-    a {
+    span {
       display: flex;
       align-items: center;
       gap: 0.5rem;
